@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "runtime": {"image": "python:3.12-slim"},
+  "resources": {"cpu": 1, "memory_mb": 256, "disk_mb": 512, "timeout_seconds": 120},
+  "network": {"enabled": false},
+  "steps": [{"name": "test", "command": "python run_tests.py"}],
+  "artifacts": ["test-results.txt"],
+  "verification": {"required_exit_code": 0, "required_files": ["test-results.txt"]}
+}
+
